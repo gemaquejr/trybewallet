@@ -37,12 +37,8 @@ const mapStateToProps = (state) => ({
 });
 
 Header.propTypes = {
-  email: PropTypes.string,
+  email: PropTypes.string.isRequired,
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
-};
-
-Header.defaultProps = {
-  email: '',
 };
 
 export default connect(mapStateToProps, null)(Header);

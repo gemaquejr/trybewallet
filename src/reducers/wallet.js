@@ -2,6 +2,7 @@
 import {
   SAVE_WALLET,
   SAVE_CURRENT,
+  DELETE_WALLET,
 } from '../actions/index';
 
 const INITIAL_STATE = {
@@ -27,6 +28,12 @@ function wallet(state = INITIAL_STATE, action) {
     return ({
       ...state,
       currencies: action.payload,
+    });
+
+  case DELETE_WALLET:
+    return ({
+      ...state,
+      expenses: state.expenses.filter((expense) => expense.id !== action.payload),
     });
 
   default:

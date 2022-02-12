@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import DeleteButton from './deleteButton';
+import * as ACT from '../actions/index';
 
 class Table extends React.Component {
   render() {
@@ -26,7 +28,7 @@ class Table extends React.Component {
               <td>{ expense.description }</td>
               <td>{ expense.tag }</td>
               <td>{ expense.method }</td>
-              <td>{ expense.value }</td>
+              <td>{ parseFloat(expense.value).toFixed(2) }</td>
               <td>
                 { expense.exchangeRates[expense.currency]
                   .name.replace('/Real Brasileiro', '')}
@@ -38,6 +40,9 @@ class Table extends React.Component {
 
               </td>
               <td>Real</td>
+              <td>
+                <DeleteButton id={ expense.id } />
+              </td>
             </tr>
           ))}
         </tbody>
@@ -54,4 +59,8 @@ Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
-export default connect(mapStateToProps)(Table);
+const mapDispatchToProps = (dispatch) => ({
+  deleteExpense: (expenses) => dispatch(ACT.actionDeleteWallet(expenses)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Table);

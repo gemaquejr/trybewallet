@@ -11,7 +11,7 @@ class ExpenseForm extends React.Component {
     this.state = {
       currenciesAPI: [],
       id: 0,
-      value: 0.00,
+      value: '',
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
@@ -55,7 +55,7 @@ class ExpenseForm extends React.Component {
     sendExpense(expenseInfo);
     this.setState({
       id: 0,
-      value: 0.00,
+      value: '',
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
@@ -150,7 +150,6 @@ class ExpenseForm extends React.Component {
 
 const mapStateToProps = (state) => ({
   currencies: state.wallet.currencies,
-  expenses: state.wallet.expenses,
 });
 
 ExpenseForm.propTypes = {
