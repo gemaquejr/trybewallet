@@ -11,7 +11,7 @@ class ExpenseForm extends React.Component {
     this.state = {
       currenciesAPI: [],
       id: 0,
-      value: '',
+      value: 0.00,
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
@@ -55,7 +55,7 @@ class ExpenseForm extends React.Component {
     sendExpense(expenseInfo);
     this.setState({
       id: 0,
-      value: '',
+      value: 0.00,
       description: '',
       currency: 'USD',
       method: 'Dinheiro',
