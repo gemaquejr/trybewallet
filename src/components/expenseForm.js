@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import * as ACT from '../actions/index';
 
+import '../styles/expenseForm.css';
+
 class ExpenseForm extends React.Component {
   constructor() {
     super();

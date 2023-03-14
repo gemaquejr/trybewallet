@@ -1,0 +1,23 @@
+form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 15px;
+    min-height: 40px;
+  }
+  
+input, select {
+    margin-top: 4px;
+    border: transparent 2px;
+  }
+  
+label {
+    display: contents;
+    margin: 0 10px;
+    padding: 5px;
+  }
+  
+button {
+    border-radius: 15px;
+    height: 30px;
+  }
