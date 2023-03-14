@@ -6,7 +6,14 @@ import * as ACT from '../actions/index';
 
 class Table extends React.Component {
   render() {
-    const { expenses } = this.props;
+    const { expenses, enableEdit } = this.props;
+
+    const getIndexOfExpense = (expenseId) => {
+      console.log(getIndexOfExpense);
+      const target = (expenses.find((expenseWith) => expenseWith.id === expenseId));
+      return ({ id: expenses.indexOf(target), exchange: target.exchangeRates });
+    };
+
     return (
       <table>
         <thead>
@@ -42,6 +49,14 @@ class Table extends React.Component {
               <td>Real</td>
               <td>
                 <DeleteButton id={ expense.id } />
+                <button
+                  type="button"
+                  data-testid="edit-btn"
+                  id={ expense.id }
+                  onClick={ () => enableEdit(getIndexOfExpense(expense.id)) }
+                >
+                  Editar despesa
+                </button>
               </td>
             </tr>
           ))}
@@ -57,10 +72,12 @@ const mapStateToProps = (state) => ({
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.object).isRequired,
+  enableEdit: PropTypes.func.isRequired,
 };
 
 const mapDispatchToProps = (dispatch) => ({
   deleteExpense: (expenses) => dispatch(ACT.actionDeleteWallet(expenses)),
+  enableEdit: (expenseId) => dispatch(ACT.enableExpenseEditing(expenseId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
