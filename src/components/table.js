@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import DeleteButton from './deleteButton';
 import * as ACT from '../actions/index';
 
+import '../styles/table.css';
+
 class Table extends React.Component {
   render() {
     const { expenses, enableEdit } = this.props;
