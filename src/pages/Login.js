@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import * as ACT from '../actions/index';
 
+import '../styles/login.css';
+
 class Login extends React.Component {
   constructor() {
     super();
@@ -48,7 +50,7 @@ class Login extends React.Component {
     const { emailDispatch, history } = this.props;
 
     return (
-      <div>
+      <div className="login-container">
         <label htmlFor="email-input">
           <input
             id="email"
