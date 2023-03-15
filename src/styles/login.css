@@ -1,5 +1,5 @@
 .login-container {
-    background: #081739;
+    background: #04AA6D;
     position: absolute;
     width: 332px;
     top: 50%;
@@ -9,4 +9,14 @@
     padding: 40px 60px;
     border-radius: 10px;
     animation: slideUp 500ms;
+  }
+
+  span {
+    color: white;
+    font-weight: bold;
+  }
+
+  .btn-login {
+    margin-top: 10px;
+    margin-left: 80px
   }

@@ -3,9 +3,9 @@
 }
 
 body {
-  background: linear-gradient(0, #120c56, #000000);
+  background: rgb(129, 855, 480);;
   background-attachment: fixed;
-  color: white;
+  color: black;
   font-family: Raleway, sans-serif;
 }
 
@@ -39,4 +39,9 @@ button:disabled {
 
 select {
   cursor: pointer;
+}
+
+tr {
+  color: black;
+  font-weight: bold;
 }
